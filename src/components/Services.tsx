@@ -4,40 +4,28 @@ import { Code, Palette, Smartphone, Zap, Globe, Search } from "lucide-react";
 const Services = () => {
   const services = [
     {
-      icon: Code,
-      title: "Custom Web Development",
-      description: "Modern, scalable web applications built with cutting-edge technologies and best practices.",
-      features: ["React & Next.js", "TypeScript", "Node.js", "API Integration"]
-    },
-    {
       icon: Palette,
-      title: "UI/UX Design",
-      description: "Beautiful, intuitive designs that provide exceptional user experiences and drive conversions.",
+      title: "UX/UI Design",
+      description: "Create intuitive and engaging user experiences with modern UI design principles.",
       features: ["User Research", "Wireframing", "Prototyping", "Design Systems"]
     },
     {
-      icon: Smartphone,
-      title: "Mobile-First Design",
-      description: "Responsive designs that look and perform flawlessly across all devices and screen sizes.",
-      features: ["Responsive Design", "Progressive Web Apps", "Mobile Optimization", "Touch Interfaces"]
+      icon: Code,
+      title: "Web Development",
+      description: "Custom websites, portfolios, and e-commerce solutions tailored to your needs.",
+      features: ["React & Next.js", "TypeScript", "Node.js", "API Integration"]
     },
     {
       icon: Zap,
-      title: "Performance Optimization",
-      description: "Lightning-fast websites optimized for speed, SEO, and exceptional user experience.",
-      features: ["Core Web Vitals", "SEO Optimization", "Speed Optimization", "Analytics"]
-    },
-    {
-      icon: Globe,
-      title: "E-commerce Solutions",
-      description: "Complete online stores with secure payments, inventory management, and seamless checkout.",
-      features: ["Shopify", "WooCommerce", "Custom Solutions", "Payment Integration"]
+      title: "Maintenance & Hosting",
+      description: "Reliable website maintenance, hosting, backups, and performance optimization.",
+      features: ["Site Monitoring", "Security Updates", "Performance Optimization", "Backups"]
     },
     {
       icon: Search,
-      title: "Digital Strategy",
-      description: "Comprehensive digital strategies to help your business grow and succeed online.",
-      features: ["SEO Strategy", "Content Planning", "Analytics", "Conversion Optimization"]
+      title: "SEO & Digital Marketing",
+      description: "Increase visibility and drive traffic with SEO strategies and targeted digital marketing.",
+      features: ["SEO Strategy", "Content Marketing", "Analytics", "Conversion Optimization"]
     }
   ];
 

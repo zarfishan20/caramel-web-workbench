@@ -5,52 +5,36 @@ import { ExternalLink, Github } from "lucide-react";
 const Portfolio = () => {
   const projects = [
     {
-      title: "E-commerce Platform",
-      category: "Full-Stack Development",
-      description: "A modern e-commerce platform with advanced filtering, secure payments, and real-time inventory management.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      tech: ["React", "Node.js", "Stripe", "MongoDB"],
+      title: "MFA Carpet & Flooring",
+      category: "Local Business",
+      description: "A bold site with quote request for a local flooring business.",
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
+      tech: ["Quote System", "Local SEO", "Responsive", "Contact Forms"],
       gradient: "from-caramel to-gold"
     },
     {
-      title: "SaaS Dashboard",
-      category: "Web Application",
-      description: "Comprehensive analytics dashboard with real-time data visualization and advanced reporting features.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      tech: ["Next.js", "TypeScript", "Chart.js", "PostgreSQL"],
+      title: "FlexiPay Accountancy",
+      category: "Professional Services",
+      description: "A modern website for a payroll & bookkeeping firm.",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
+      tech: ["Professional Design", "Service Pages", "Client Portal", "Security"],
       gradient: "from-gold to-caramel-light"
     },
     {
-      title: "Restaurant Website",
-      category: "Business Website",
-      description: "Beautiful restaurant website with online reservations, menu management, and customer reviews.",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
-      tech: ["React", "Tailwind", "Firebase", "Stripe"],
+      title: "E-commerce Platform",
+      category: "Online Store",
+      description: "Modern e-commerce solution with advanced filtering and payment integration.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+      tech: ["React", "Stripe", "Inventory", "Analytics"],
       gradient: "from-caramel-dark to-caramel"
     },
     {
       title: "Portfolio Website",
       category: "Creative Design",
-      description: "Stunning portfolio website for a creative agency with smooth animations and interactive elements.",
+      description: "Creative portfolio showcase with smooth animations and modern design.",
       image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
-      tech: ["Vue.js", "GSAP", "Three.js", "Netlify"],
+      tech: ["GSAP", "Animations", "Creative", "Responsive"],
       gradient: "from-gold-light to-gold"
-    },
-    {
-      title: "Learning Platform",
-      category: "Educational Tech",
-      description: "Interactive learning platform with video streaming, progress tracking, and certification system.",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
-      tech: ["React", "Express", "Video.js", "MySQL"],
-      gradient: "from-caramel to-caramel-dark"
-    },
-    {
-      title: "Fitness App",
-      category: "Mobile Web App",
-      description: "Progressive web app for fitness tracking with workout plans, nutrition guides, and social features.",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
-      tech: ["PWA", "React", "Chart.js", "Firebase"],
-      gradient: "from-gold to-caramel-light"
     }
   ];
 

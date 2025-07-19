@@ -6,10 +6,9 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Home", href: "#home" },
+    { label: "Projects", href: "#portfolio" },
     { label: "Services", href: "#services" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "About", href: "#about" },
+    { label: "Packages", href: "#packages" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -42,7 +41,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button variant="caramel" size="sm">
-              Get Started
+              Request a Quote
             </Button>
           </div>
 
@@ -71,7 +70,7 @@ const Header = () => {
               ))}
               <div className="pt-4">
                 <Button variant="caramel" size="sm" className="w-full">
-                  Get Started
+                  Request a Quote
                 </Button>
               </div>
             </nav>

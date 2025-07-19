@@ -30,13 +30,11 @@ const Hero = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            <span className="block">Caramel</span>
-            <span className="block text-gold-light">Web Studios</span>
+            Crafting beautiful, functional websites that grow your business.
           </h1>
           
           <p className="text-xl md:text-2xl text-cream mb-8 max-w-3xl mx-auto leading-relaxed">
-            Crafting exceptional digital experiences with the perfect blend of 
-            creativity and technical excellence
+            Design-forward, responsive, and reliable web solutions for modern brands.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -45,7 +43,7 @@ const Hero = () => {
               size="lg" 
               className="group animate-fade-in-scale delay-300"
             >
-              Start Your Project
+              Request a Quote
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
