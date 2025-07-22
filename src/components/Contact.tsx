@@ -2,9 +2,78 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    projectType: "Web Development",
+    message: ""
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Basic validation
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Simulate form submission
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. We'll get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        projectType: "Web Development",
+        message: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleScheduleCall = () => {
+    toast({
+      title: "Redirecting...",
+      description: "Opening our calendar to schedule your consultation.",
+    });
+    // In a real app, this would open a calendar booking system
+    window.open("https://calendly.com/caramelwebstudios", "_blank");
+  };
+
   return (
     <section className="py-20 bg-gradient-hero relative overflow-hidden">
       {/* Background Pattern */}
@@ -31,26 +100,53 @@ const Contact = () => {
           <Card className="p-8 bg-white/95 backdrop-blur-sm border-white/20 shadow-strong animate-fade-in-scale">
             <h3 className="text-2xl font-semibold text-foreground mb-6">Send us a message</h3>
             
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">First Name</label>
-                  <Input placeholder="John" className="border-border/50 focus:border-caramel" />
+                  <label className="block text-sm font-medium text-foreground mb-2">First Name *</label>
+                  <Input 
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    placeholder="John" 
+                    className="border-border/50 focus:border-caramel" 
+                    required
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Last Name</label>
-                  <Input placeholder="Doe" className="border-border/50 focus:border-caramel" />
+                  <label className="block text-sm font-medium text-foreground mb-2">Last Name *</label>
+                  <Input 
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    placeholder="Doe" 
+                    className="border-border/50 focus:border-caramel" 
+                    required
+                  />
                 </div>
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Email</label>
-                <Input type="email" placeholder="john@example.com" className="border-border/50 focus:border-caramel" />
+                <label className="block text-sm font-medium text-foreground mb-2">Email *</label>
+                <Input 
+                  name="email"
+                  type="email" 
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="john@example.com" 
+                  className="border-border/50 focus:border-caramel" 
+                  required
+                />
               </div>
               
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Project Type</label>
-                <select className="w-full px-3 py-2 border border-border/50 rounded-md focus:outline-none focus:border-caramel bg-background">
+                <select 
+                  name="projectType"
+                  value={formData.projectType}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 border border-border/50 rounded-md focus:outline-none focus:border-caramel bg-background"
+                >
                   <option>Web Development</option>
                   <option>E-commerce</option>
                   <option>Mobile App</option>
@@ -60,16 +156,26 @@ const Contact = () => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Message</label>
+                <label className="block text-sm font-medium text-foreground mb-2">Message *</label>
                 <Textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   placeholder="Tell us about your project..." 
                   rows={4}
                   className="border-border/50 focus:border-caramel resize-none"
+                  required
                 />
               </div>
               
-              <Button variant="hero" size="lg" className="w-full group">
-                Send Message
+              <Button 
+                type="submit" 
+                variant="hero" 
+                size="lg" 
+                className="w-full group" 
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
                 <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </form>
@@ -127,7 +233,12 @@ const Contact = () => {
               <p className="text-cream text-sm mb-4">
                 Book a free consultation call to discuss your project requirements.
               </p>
-              <Button variant="gold" size="sm" className="w-full">
+              <Button 
+                variant="gold" 
+                size="sm" 
+                className="w-full" 
+                onClick={handleScheduleCall}
+              >
                 Schedule a Call
               </Button>
             </Card>

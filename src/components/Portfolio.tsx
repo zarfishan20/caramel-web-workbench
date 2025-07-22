@@ -1,8 +1,35 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import { ExternalLink, Github } from "lucide-react";
 
 const Portfolio = () => {
+  const { toast } = useToast();
+
+  const handleViewProject = (projectTitle: string) => {
+    toast({
+      title: "Project Details",
+      description: `Opening ${projectTitle} case study...`,
+    });
+    // In a real app, this would navigate to a detailed project page
+  };
+
+  const handleViewSource = (projectTitle: string) => {
+    toast({
+      title: "Source Code",
+      description: `Viewing source code for ${projectTitle}...`,
+    });
+    // In a real app, this would open the GitHub repository
+  };
+
+  const handleViewAllProjects = () => {
+    toast({
+      title: "Portfolio",
+      description: "Opening full portfolio gallery...",
+    });
+    // In a real app, this would navigate to a portfolio page
+  };
+
   const projects = [
     {
       title: "MFA Carpet & Flooring",
@@ -70,10 +97,20 @@ const Portfolio = () => {
                 {/* Overlay Buttons */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
                   <div className="flex gap-3">
-                    <Button size="sm" variant="hero" className="scale-90 hover:scale-100">
+                    <Button 
+                      size="sm" 
+                      variant="hero" 
+                      className="scale-90 hover:scale-100"
+                      onClick={() => handleViewProject(project.title)}
+                    >
                       <ExternalLink className="w-4 h-4" />
                     </Button>
-                    <Button size="sm" variant="outline" className="bg-white/90 hover:bg-white scale-90 hover:scale-100">
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="bg-white/90 hover:bg-white scale-90 hover:scale-100"
+                      onClick={() => handleViewSource(project.title)}
+                    >
                       <Github className="w-4 h-4" />
                     </Button>
                   </div>
@@ -113,7 +150,12 @@ const Portfolio = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button variant="caramel" size="lg" className="animate-fade-in-scale">
+          <Button 
+            variant="caramel" 
+            size="lg" 
+            className="animate-fade-in-scale"
+            onClick={handleViewAllProjects}
+          >
             View All Projects
             <ExternalLink className="w-5 h-5 ml-2" />
           </Button>

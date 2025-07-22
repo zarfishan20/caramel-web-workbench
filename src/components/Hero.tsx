@@ -1,8 +1,28 @@
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import { ArrowRight, Code, Palette, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-workspace.jpg";
 
 const Hero = () => {
+  const { toast } = useToast();
+
+  const handleRequestQuote = () => {
+    // Scroll to contact section
+    const contactSection = document.querySelector('#contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+    
+    toast({
+      title: "Let's get started!",
+      description: "Please fill out the form below to request a quote.",
+    });
+  };
+
+  const handleViewWork = () => {
+    // Scroll to portfolio section
+    const portfolioSection = document.querySelector('#portfolio');
+    portfolioSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
       {/* Background Image with Overlay */}
@@ -42,6 +62,7 @@ const Hero = () => {
               variant="hero" 
               size="lg" 
               className="group animate-fade-in-scale delay-300"
+              onClick={handleRequestQuote}
             >
               Request a Quote
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -51,6 +72,7 @@ const Hero = () => {
               variant="outline" 
               size="lg" 
               className="bg-white/10 border-white/30 text-white hover:bg-white/20 animate-fade-in-scale delay-500"
+              onClick={handleViewWork}
             >
               View Our Work
             </Button>
