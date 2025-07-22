@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Twitter, Linkedin, Github, Instagram } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-foreground text-white py-16">
+  return <footer className="bg-foreground text-white py-16">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
@@ -39,13 +37,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-gold">Quick Links</h4>
             <ul className="space-y-3">
-              {["Home", "About", "Services", "Portfolio", "Contact"].map((link) => (
-                <li key={link}>
+              {["Home", "About", "Services", "Portfolio", "Contact"].map(link => <li key={link}>
                   <a href={`#${link.toLowerCase()}`} className="text-white/80 hover:text-gold transition-colors">
                     {link}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
           
@@ -55,15 +51,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-gold" />
-                <span className="text-white/80 text-sm">hello@caramelwebstudios.com</span>
+                <span className="text-white/80 text-sm">info@caramelwebstudios.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-gold" />
-                <span className="text-white/80 text-sm">+1 (555) 123-4567</span>
+                <span className="text-white/80 text-sm">07472 311317</span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-gold" />
-                <span className="text-white/80 text-sm">Tech District, CA</span>
+                <span className="text-white/80 text-sm">London, UK</span>
               </div>
             </div>
           </div>
@@ -89,8 +85,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
