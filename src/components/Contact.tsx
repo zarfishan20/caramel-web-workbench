@@ -5,9 +5,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -16,12 +17,16 @@ const Contact = () => {
     projectType: "Web Development",
     message: ""
   });
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -31,7 +36,7 @@ const Contact = () => {
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields.",
-        variant: "destructive",
+        variant: "destructive"
       });
       setIsSubmitting(false);
       return;
@@ -40,10 +45,9 @@ const Contact = () => {
     // Simulate form submission
     try {
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
       toast({
         title: "Message Sent!",
-        description: "Thank you for your message. We'll get back to you within 24 hours.",
+        description: "Thank you for your message. We'll get back to you within 24 hours."
       });
 
       // Reset form
@@ -58,24 +62,21 @@ const Contact = () => {
       toast({
         title: "Error",
         description: "Something went wrong. Please try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
   const handleScheduleCall = () => {
     toast({
       title: "Redirecting...",
-      description: "Opening our calendar to schedule your consultation.",
+      description: "Opening our calendar to schedule your consultation."
     });
     // In a real app, this would open a calendar booking system
     window.open("https://calendly.com/caramelwebstudios", "_blank");
   };
-
-  return (
-    <section className="py-20 bg-gradient-hero relative overflow-hidden">
+  return <section className="py-20 bg-gradient-hero relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 bg-gold rounded-full blur-3xl"></div>
@@ -104,49 +105,22 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">First Name *</label>
-                  <Input 
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                    placeholder="John" 
-                    className="border-border/50 focus:border-caramel" 
-                    required
-                  />
+                  <Input name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="John" className="border-border/50 focus:border-caramel" required />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Last Name *</label>
-                  <Input 
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                    placeholder="Doe" 
-                    className="border-border/50 focus:border-caramel" 
-                    required
-                  />
+                  <Input name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Doe" className="border-border/50 focus:border-caramel" required />
                 </div>
               </div>
               
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Email *</label>
-                <Input 
-                  name="email"
-                  type="email" 
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="john@example.com" 
-                  className="border-border/50 focus:border-caramel" 
-                  required
-                />
+                <Input name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="john@example.com" className="border-border/50 focus:border-caramel" required />
               </div>
               
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Project Type</label>
-                <select 
-                  name="projectType"
-                  value={formData.projectType}
-                  onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-border/50 rounded-md focus:outline-none focus:border-caramel bg-background"
-                >
+                <select name="projectType" value={formData.projectType} onChange={handleInputChange} className="w-full px-3 py-2 border border-border/50 rounded-md focus:outline-none focus:border-caramel bg-background">
                   <option>Web Development</option>
                   <option>E-commerce</option>
                   <option>Mobile App</option>
@@ -157,24 +131,10 @@ const Contact = () => {
               
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Message *</label>
-                <Textarea 
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Tell us about your project..." 
-                  rows={4}
-                  className="border-border/50 focus:border-caramel resize-none"
-                  required
-                />
+                <Textarea name="message" value={formData.message} onChange={handleInputChange} placeholder="Tell us about your project..." rows={4} className="border-border/50 focus:border-caramel resize-none" required />
               </div>
               
-              <Button 
-                type="submit" 
-                variant="hero" 
-                size="lg" 
-                className="w-full group" 
-                disabled={isSubmitting}
-              >
+              <Button type="submit" variant="hero" size="lg" className="w-full group" disabled={isSubmitting}>
                 {isSubmitting ? "Sending..." : "Send Message"}
                 <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -199,8 +159,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Email</h4>
-                  <p className="text-cream">hello@caramelwebstudios.com</p>
-                  <p className="text-cream">projects@caramelwebstudios.com</p>
+                  <p className="text-cream">info@caramelwebstudios.com</p>
+                  
                 </div>
               </div>
               
@@ -211,7 +171,7 @@ const Contact = () => {
                 <div>
                   <h4 className="text-white font-medium mb-1">Phone</h4>
                   <p className="text-cream">+1 (555) 123-4567</p>
-                  <p className="text-cream">+1 (555) 987-6543</p>
+                  
                 </div>
               </div>
               
@@ -221,8 +181,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Office</h4>
-                  <p className="text-cream">123 Creative Street</p>
-                  <p className="text-cream">Tech District, CA 90210</p>
+                  <p className="text-cream">Barking, Essex</p>
+                  <p className="text-cream">London, UK</p>
                 </div>
               </div>
             </div>
@@ -233,20 +193,13 @@ const Contact = () => {
               <p className="text-cream text-sm mb-4">
                 Book a free consultation call to discuss your project requirements.
               </p>
-              <Button 
-                variant="gold" 
-                size="sm" 
-                className="w-full" 
-                onClick={handleScheduleCall}
-              >
+              <Button variant="gold" size="sm" className="w-full" onClick={handleScheduleCall}>
                 Schedule a Call
               </Button>
             </Card>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
