@@ -14,6 +14,7 @@ const Contact = () => {
     firstName: "",
     lastName: "",
     email: "",
+    phone: "",
     projectType: "Web Development",
     message: ""
   });
@@ -55,6 +56,7 @@ const Contact = () => {
         firstName: "",
         lastName: "",
         email: "",
+        phone: "",
         projectType: "Web Development",
         message: ""
       });
@@ -116,6 +118,11 @@ const Contact = () => {
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Email *</label>
                 <Input name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="john@example.com" className="border-border/50 focus:border-caramel" required />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Phone</label>
+                <Input name="phone" type="tel" value={formData.phone} onChange={handleInputChange} placeholder="+1 (555) 123-4567" className="border-border/50 focus:border-caramel" />
               </div>
               
               <div>
