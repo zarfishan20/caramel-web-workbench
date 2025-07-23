@@ -148,7 +148,7 @@ const Section: React.FC<SectionProps> = ({ data }) => (
             </ul>
           </div>
           <a
-            href="/quote"
+            href="#quote"
             className="mt-6 inline-block text-center bg-[hsl(var(--caramel))] text-[hsl(var(--primary-foreground))] py-2 px-4 rounded hover:bg-[hsl(var(--caramel-dark))] transition"
             style={{ transition: "var(--transition-smooth)" }}
           >
