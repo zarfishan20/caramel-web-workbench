@@ -22,7 +22,7 @@ const Header = () => {
     }
   };
   const handleRequestQuote = () => {
-    const contactSection = document.querySelector('#contact');
+    const contactSection = document.querySelector('#quote');
     contactSection?.scrollIntoView({
       behavior: 'smooth'
     });

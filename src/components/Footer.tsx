@@ -69,7 +69,7 @@ const Footer = () => {
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/60 text-sm">
-              © 2024 Caramel Web Studios. All rights reserved.
+              &copy; 2023 - {new Date().getFullYear()} Caramel Web Studios. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-white/60 hover:text-gold transition-colors text-sm">

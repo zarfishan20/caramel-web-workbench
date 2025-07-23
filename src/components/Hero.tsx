@@ -8,13 +8,9 @@ const Hero = () => {
 
   const handleRequestQuote = () => {
     // Scroll to contact section
-    const contactSection = document.querySelector('#contact');
+    const contactSection = document.querySelector('#quote');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
-    
-    toast({
-      title: "Let's get started!",
-      description: "Please fill out the form below to request a quote.",
-    });
+  
   };
 
   const handleViewWork = () => {
@@ -78,22 +74,7 @@ const Hero = () => {
             </Button>
           </div>
         </div>
-        
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-8 mt-16 animate-fade-in delay-700">
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-gold-light mb-2">50+</div>
-            <div className="text-cream opacity-80">Projects Delivered</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-gold-light mb-2">5+</div>
-            <div className="text-cream opacity-80">Years Experience</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-gold-light mb-2">100%</div>
-            <div className="text-cream opacity-80">Client Satisfaction</div>
-          </div>
-        </div>
+    
       </div>
       
       {/* Scroll Indicator */}

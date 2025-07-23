@@ -4,6 +4,8 @@ import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Packages from "@/components/Packages";
+import  Quote  from "@/components/Quote";
 
 const Index = () => {
   return (
@@ -22,6 +24,13 @@ const Index = () => {
         <section id="contact">
           <Contact />
         </section>
+           <section id="packages">
+          <Packages />
+        </section>
+   <section id="quote">
+          <Quote />
+        </section>
+
       </main>
       <Footer />
     </div>
