@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/logo.svg";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const {
@@ -50,10 +51,21 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl font-bold">
+               <a href="/" className="flex items-center space-x-2">
+              <img
+                src={logo}
+                alt="Caramel Web Studios"
+                className="h-10 w-auto"
+              />
+                {/* Text logo - hidden on mobile */}
+              <span className="hidden sm:block font-bold text-xl text-caramel">
+               <div className="text-2xl font-bold">
               <span className="text-caramel">Caramel</span>
               <span className="text-gold ml-1">Web Studios</span>
             </div>
+              </span>
+            </a>
+           
           </div>
 
           {/* Desktop Navigation */}

@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
               <div className="text-3xl font-bold">
-                <span className="text-gold">Caramel</span>
+                <span className="text-caramel">Caramel</span>
                 <span className="text-white ml-2">Web Studios</span>
               </div>
             </div>
