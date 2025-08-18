@@ -76,7 +76,7 @@ const Contact = () => {
       description: "Opening our calendar to schedule your consultation."
     });
     // In a real app, this would open a calendar booking system
-    window.open("https://calendly.com/caramelwebstudios", "_blank");
+    window.open("https://calendly.com/caramelwebstudios/30min", "_blank");
   };
   return <section className="py-20 bg-gradient-hero relative overflow-hidden">
       {/* Background Pattern */}
