@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Twitter, Linkedin, Github, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return <footer className="bg-foreground text-white py-16">
       <div className="max-w-6xl mx-auto px-6">
@@ -19,9 +20,6 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="sm" className="text-white hover:text-gold hover:bg-white/10">
-                <Twitter className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="sm" className="text-white hover:text-gold hover:bg-white/10">
                 <Linkedin className="w-5 h-5" />
               </Button>
               <Button variant="ghost" size="sm" className="text-white hover:text-gold hover:bg-white/10">
@@ -37,7 +35,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-gold">Quick Links</h4>
             <ul className="space-y-3">
-              {["Home", "About", "Services", "Portfolio", "Contact"].map(link => <li key={link}>
+              {["Home", "Services", "Portfolio", "Contact"].map(link => <li key={link}>
                   <a href={`#${link.toLowerCase()}`} className="text-white/80 hover:text-gold transition-colors">
                     {link}
                   </a>
@@ -72,15 +70,15 @@ const Footer = () => {
               &copy; 2023 - {new Date().getFullYear()} Caramel Web Studios. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-white/60 hover:text-gold transition-colors text-sm">
+              <Link to="/privacy" className="text-white/60 hover:text-gold transition-colors text-sm">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-white/60 hover:text-gold transition-colors text-sm">
+              </Link>
+              <Link to="/terms" className="text-white/60 hover:text-gold transition-colors text-sm">
                 Terms of Service
-              </a>
-              <a href="#" className="text-white/60 hover:text-gold transition-colors text-sm">
+              </Link>
+              <Link to="cookies" className="text-white/60 hover:text-gold transition-colors text-sm">
                 Cookie Policy
-              </a>
+              </Link>
             </div>
           </div>
         </div>

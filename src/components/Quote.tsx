@@ -7,7 +7,6 @@ import { useToast } from "@/hooks/use-toast";
 import { Send, Briefcase, Globe, Calendar } from "lucide-react";
 
 
-
 const QuoteForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
