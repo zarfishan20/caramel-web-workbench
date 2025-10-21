@@ -8,20 +8,21 @@ const Header = () => {
   const {
     toast
   } = useToast();
-  const handleNavClick = (href: string, label: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
-      setIsMenuOpen(false);
-    } else {
-      toast({
-        title: "Coming Soon",
-        description: `${label} section is being developed.`
-      });
+  
+const handleNavClick = (href, label) => {
+  if (href.startsWith("http")) {
+    // External link → open in new tab
+    window.open(href, "_blank", "noopener,noreferrer");
+  } else {
+    // Internal anchor → smooth scroll
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false); // Close mobile menu
     }
-  };
+  }
+};
+
   const handleRequestQuote = () => {
     const contactSection = document.querySelector('#quote');
     contactSection?.scrollIntoView({
