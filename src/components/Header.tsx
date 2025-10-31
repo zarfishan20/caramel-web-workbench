@@ -23,6 +23,11 @@ const handleNavClick = (href, label) => {
   }
 };
 
+const handleClientArea = () => {
+  window.open("https://my.caramelwebstudios.com/login", "_blank", "noopener,noreferrer");
+};
+
+
   const handleRequestQuote = () => {
     const contactSection = document.querySelector('#quote');
     contactSection?.scrollIntoView({
@@ -34,6 +39,9 @@ const handleNavClick = (href, label) => {
       description: "Please fill out the form below to request a quote."
     });
   };
+
+
+
   const navItems = [{
     label: "Projects",
     href: "#portfolio"
@@ -85,7 +93,11 @@ const handleNavClick = (href, label) => {
             <Button variant="caramel" size="sm" onClick={handleRequestQuote}>
               Request a Quote
             </Button>
+             <Button variant="outline" size="sm" onClick={handleClientArea}>
+    Client Area
+  </Button>
           </div>
+          
 
           {/* Mobile Menu Button */}
           <button className="md:hidden p-2 text-foreground hover:text-caramel transition-colors" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -104,6 +116,12 @@ const handleNavClick = (href, label) => {
                   Request a Quote
                 </Button>
               </div>
+              <div className="pt-2">
+  <Button variant="outline" size="sm" className="w-full" onClick={handleClientArea}>
+    Client Area
+  </Button>
+</div>
+
             </nav>
           </div>}
       </div>
