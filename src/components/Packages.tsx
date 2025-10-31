@@ -57,33 +57,33 @@ const packages: PackageGroup = {
     {
       title: "Basic Care",
       features: [
-         "Hosting management",
-" Domain management",
-"Backups (daily/weekly)",
-"Security monitoring",
-" Plugin updates",
-"Performance checks",
+        "Hosting management",
+        "Domain management",
+        "Backups (daily/weekly)",
+        "Security monitoring",
+        "Plugin updates",
+        "Performance checks",
       ],
     },
     {
       title: "Standard Support",
       features: [
-        "Uptime monitoring ",
-        "Small monthly edits ",
-        "PBug fixes",
-        "Speed optimisation  ",
-        "Priority support ",
+        "Uptime monitoring",
+        "Small monthly edits",
+        "Bug fixes",
+        "Speed optimisation",
+        "Priority support",
       ],
     },
     {
       title: "Pro Plan",
       features: [
-        "Unlimited website edits (within reason) ",
-        "New pages/features ",
+        "Unlimited website edits (within reason)",
+        "New pages/features",
         "SEO monitoring",
-        "Monthly analytics reports ",
-        "Full technical support ",
-        "Development of new components short description for these packages",
+        "Monthly analytics reports",
+        "Full technical support",
+        "Development of new components",
       ],
     },
   ],
@@ -96,7 +96,9 @@ const tabs = [
 ];
 
 const Packages = () => {
-  const [activeTab, setActiveTab] = useState<keyof typeof packages>("webDevelopment");
+  const [activeTab, setActiveTab] = useState<keyof typeof packages>(
+    "webDevelopment"
+  );
 
   return (
     <div id="packages" className="px-4 py-10 max-w-7xl mx-auto">
@@ -123,16 +125,22 @@ const Packages = () => {
       </div>
 
       {/* Tab content */}
-      <Section data={packages[activeTab]} />
+      <Section
+        data={packages[activeTab]}
+        external={activeTab === "maintenance"}
+        externalUrl="https://my.caramelwebstudios.com/login"
+      />
     </div>
   );
 };
 
 type SectionProps = {
   data: Package[];
+  external?: boolean;
+  externalUrl?: string;
 };
 
-const Section: React.FC<SectionProps> = ({ data }) => (
+const Section: React.FC<SectionProps> = ({ data, external, externalUrl }) => (
   <section className="mb-10">
     <div className="grid gap-6 md:grid-cols-3">
       {data.map((pkg, index) => (
@@ -155,11 +163,13 @@ const Section: React.FC<SectionProps> = ({ data }) => (
             </ul>
           </div>
           <a
-            href="#quote"
-            className="mt-6 inline-block text-center bg-[hsl(var(--caramel))] text-[hsl(var(--primary-foreground))] py-2 px-4 rounded hover:bg-[hsl(var(--caramel-dark))] transition"
+            href={external ? externalUrl : "#quote"}
+            target={external ? "_blank" : "_self"}
+            rel={external ? "noopener noreferrer" : undefined}
+            className="mt-6 inline-block text-center py-2 px-4 rounded bg-[hsl(var(--caramel))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--caramel-dark))] transition"
             style={{ transition: "var(--transition-smooth)" }}
           >
-            Learn More
+            {external ? "Buy Now" : "Learn More"}
           </a>
         </div>
       ))}
