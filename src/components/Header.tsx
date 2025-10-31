@@ -89,14 +89,26 @@ const handleClientArea = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button variant="caramel" size="sm" onClick={handleRequestQuote}>
-              Request a Quote
-            </Button>
-             <Button variant="outline" size="sm" onClick={handleClientArea}>
+          <div className="hidden md:flex space-x-4">
+  <Button
+    variant="caramel"
+    size="sm"
+    onClick={handleRequestQuote}
+    className="px-5 py-2 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 rounded-full bg-gradient-to-r from-[#FF8C00] to-[#FFD580] text-white"
+  >
+    Request a Quote
+  </Button>
+
+  <Button
+    variant="outline"
+    size="sm"
+    onClick={handleClientArea}
+    className="px-5 py-2 font-semibold rounded-full border-2 border-[hsl(var(--caramel))] text-[hsl(var(--caramel))] hover:bg-[hsl(var(--caramel))] hover:text-white transition-all duration-300"
+  >
     Client Area
   </Button>
-          </div>
+</div>
+
           
 
           {/* Mobile Menu Button */}
@@ -111,16 +123,26 @@ const handleClientArea = () => {
               {navItems.map(item => <button key={item.label} onClick={() => handleNavClick(item.href, item.label)} className="text-foreground hover:text-caramel transition-colors duration-300 font-medium px-2 py-1 text-left">
                   {item.label}
                 </button>)}
-              <div className="pt-4">
-                <Button variant="caramel" size="sm" className="w-full" onClick={handleRequestQuote}>
-                  Request a Quote
-                </Button>
-              </div>
-              <div className="pt-2">
-  <Button variant="outline" size="sm" className="w-full" onClick={handleClientArea}>
+           <div className="pt-4 flex flex-col space-y-2">
+  <Button
+    variant="caramel"
+    size="sm"
+    className="w-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 rounded-full bg-gradient-to-r from-[#FF8C00] to-[#FFD580] text-white"
+    onClick={handleRequestQuote}
+  >
+    Request a Quote
+  </Button>
+
+  <Button
+    variant="outline"
+    size="sm"
+    className="w-full font-semibold rounded-full border-2 border-[hsl(var(--caramel))] text-[hsl(var(--caramel))] hover:bg-[hsl(var(--caramel))] hover:text-white transition-all duration-300"
+    onClick={handleClientArea}
+  >
     Client Area
   </Button>
 </div>
+
 
             </nav>
           </div>}
