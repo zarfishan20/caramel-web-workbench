@@ -32,9 +32,9 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "MFA Carpet & Flooring",
+      title: "Alchemy Associtates",
       category: "Local Business",
-      description: "A bold site with quote request for a local flooring business.",
+      description: "A sleek, modern accounting portfolio designed to highlight their expertise and achievements.",
       image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
       tech: ["Quote System", "Local SEO", "Responsive", "Contact Forms"],
       gradient: "from-caramel to-gold"
