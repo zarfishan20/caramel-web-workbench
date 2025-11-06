@@ -23,9 +23,7 @@ const handleNavClick = (href, label) => {
   }
 };
 
-const handleClientArea = () => {
-  window.open("https://my.caramelwebstudios.com/login", "_blank", "noopener,noreferrer");
-};
+
 
 
   const handleRequestQuote = () => {
@@ -133,14 +131,7 @@ const handleClientArea = () => {
     Request a Quote
   </Button>
 
-  <Button
-    variant="outline"
-    size="sm"
-    className="w-full font-semibold rounded-full border-2 border-[hsl(var(--caramel))] text-[hsl(var(--caramel))] hover:bg-[hsl(var(--caramel))] hover:text-white transition-all duration-300"
-    onClick={handleClientArea}
-  >
-    Client Area
-  </Button>
+
 </div>
 
 
