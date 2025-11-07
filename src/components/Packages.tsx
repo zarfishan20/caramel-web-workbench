@@ -128,7 +128,7 @@ const Packages = () => {
       <Section
         data={packages[activeTab]}
         external={activeTab === "maintenance"}
-        externalUrl="https://my.caramelwebstudios.com/login"
+        externalUrl="https://byte6hosting.caramelwebstudios.com/billing/index.php?rp=/store/development-support-packages"
       />
     </div>
   );
