@@ -97,14 +97,7 @@ const handleNavClick = (href, label) => {
     Request a Quote
   </Button>
 
-  <Button
-    variant="outline"
-    size="sm"
-    onClick={handleClientArea}
-    className="px-5 py-2 font-semibold rounded-full border-2 border-[hsl(var(--caramel))] text-[hsl(var(--caramel))] hover:bg-[hsl(var(--caramel))] hover:text-white transition-all duration-300"
-  >
-    Client Area
-  </Button>
+
 </div>
 
           
