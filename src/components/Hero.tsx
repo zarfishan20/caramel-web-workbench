@@ -46,11 +46,12 @@ const Hero = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Crafting beautiful, functional websites that grow your business.
+            Crafting beautiful, functional websites built & bowered by us.
           </h1>
           
           <p className="text-xl md:text-2xl text-cream mb-8 max-w-3xl mx-auto leading-relaxed">
-            Design-forward, responsive, and reliable web solutions for modern brands.
+            Design-forward, responsive, and reliable web solutions for modern brands. We design it. We host it. 
+            We power it. <strong>A complete all-in-one web solution for businesses ready to grow.</strong>
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
