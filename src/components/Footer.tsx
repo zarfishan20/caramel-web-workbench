@@ -68,7 +68,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/60 text-sm">
               &copy; 2023 - {new Date().getFullYear()} Caramel Web Studios. All rights reserved.<br />
-                                                      Caramel Web Studios is a trading name of Bytesphere Digital Ltd.  
+                                                      Caramel Web Studios is a trading name of Bytesphere Digital Ltd.<br /> 
                                                       Registered in England & Wales | Company No: 16844459.  
             </p>
             <div className="flex gap-6">
